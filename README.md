@@ -5,7 +5,7 @@ Magicorn made Terraform Module for AWS Provider
 ```
 module "elasticache" {
   source         = "magicorntech/elasticache/aws"
-  version        = "0.0.3"
+  version        = "0.0.4"
   tenant         = var.tenant
   name           = var.name
   environment    = var.environment
@@ -14,6 +14,7 @@ module "elasticache" {
   subnet_ids     = var.subnet_ids
   encryption     = true # 1
   kms_key_id     = var.elasticache_key_id
+  additional_ips = ["10.10.0.0/16", "172.31.0.0/16"] # should be set empty []
 
   # ElastiCache Configuration
   cache_name                 = "master"

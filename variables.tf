@@ -3,6 +3,7 @@ variable "name" {}
 variable "environment" {}
 variable "vpc_id" {}
 variable "cidr_block" {}
+variable "additional_ips" {}
 variable "subnet_ids" {}
 variable "encryption" {}
 variable "kms_key_id" {}
