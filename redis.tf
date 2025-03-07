@@ -21,6 +21,12 @@ resource "aws_elasticache_replication_group" "main" {
   subnet_group_name                  = aws_elasticache_subnet_group.main.name
   security_group_ids                 = [aws_security_group.main.id]
 
+  lifecycle {
+    ignore_changes = [
+      log_delivery_configuration
+    ]
+  }
+
   tags = {
     Name        = "${var.tenant}-${var.name}-${var.cache_name}-${var.environment}"
     Tenant      = var.tenant
